@@ -1,4 +1,17 @@
 @import 'variables';
+
+@mixin liftUp($height:high){
+  // adding an if and esle if statement to check the value of the argument
+  @if $height == high {
+    // The box-shadow property will be automatically prefixed with -webkit- in our final minified file by autoprefixer module
+    box-shadow: 1px 2px 5px 2px black;
+  } @else if $height == higher {
+    box-shadow: 2px 4px 10px 2px black;
+  } @else if $height == highest {
+    box-shadow: 4px 8px 30px 2px black;
+  }
+}
+
 body{
   font-family: $fonts-text;
   background-color: $asphait;
@@ -19,4 +32,5 @@ h1,h2,h3,h4,h5,h6{
 }
 .shape1{
   @extend .shape;
+  @include
 }
